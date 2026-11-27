@@ -1,0 +1,68 @@
+webcraft
+Copyright (c) 2026 Juan David Escobar
+
+This skill is a router. It contains no code or content from the projects
+below — it references them by name and delegates to them at runtime.
+They must be installed separately. Listed here for attribution and so
+users know where each dependency comes from.
+
+--------------------------------------------------------------------------
+Skills routed to
+--------------------------------------------------------------------------
+
+claude-skills — Alireza Rezvani
+  https://github.com/alirezarezvani/claude-skills
+  MIT License
+  Provides: landing, landing-page-generator, copywriting, copy-editing,
+  content-humanizer, brand-guidelines, page-cro, form-cro, signup-flow-cro,
+  popup-cro, seo-audit, schema-markup, site-architecture, aeo,
+  local-seo-manager, programmatic-seo, pricing-strategy
+
+ui-ux-pro-max-skill — nextlevelbuilder
+  https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
+  Provides: ui-ux-pro-max, ui-styling, design, design-system, brand,
+  banner-design, slides
+
+HyperFrames — HeyGen
+  https://github.com/heygen-com/hyperframes
+  Apache License 2.0
+  Provides: the /hyperframes video router and its creation workflows
+
+Remotion — Remotion GmbH
+  https://github.com/remotion-dev/remotion
+  Provides: the remotion-* skill family
+
+Claude Code official plugins — Anthropic
+  https://github.com/anthropics/claude-plugins-official
+  Provides: frontend-design, playground
+
+--------------------------------------------------------------------------
+Referenced, not vendored
+--------------------------------------------------------------------------
+
+react-bits — David Haz
+  https://github.com/DavidHDev/react-bits
+  MIT License + Commons Clause v1.0
+
+  references/react-bits.md is an index of component names and the effects
+  they produce, written to help choose one. No source code from the project
+  is reproduced here, and none may be: the Commons Clause forbids selling,
+  sublicensing or redistributing the components themselves, alone, bundled
+  or ported.
+
+  Using the components inside a website, application or product — including
+  paid commercial work — is permitted. Install them from their own source
+  with `npx jsrepo add https://reactbits.dev/<Category>/<Component>`.
+
+--------------------------------------------------------------------------
+Design galleries
+--------------------------------------------------------------------------
+
+references/sources.md describes how to consult the following as live
+references. No content, layouts, imagery or assets from them are reproduced
+in this repository, and the file instructs against doing so.
+
+  awwwards.com · cosmos.so · motionsites.ai · eyecannndy.com
+  ui.aceternity.com
+
+All work shown on those sites belongs to its respective creators.
