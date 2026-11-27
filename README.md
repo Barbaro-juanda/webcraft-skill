@@ -46,13 +46,16 @@ webcraft routes to these. Missing ones degrade gracefully: it will tell you whic
 ## Structure
 
 ```
-SKILL.md                      the router — intake, routes, delegation
+SKILL.md                      the router — intake, 8 steps, delegation
 references/
+  vocabulary.md               plain language → what to actually do
+  advisor.md                  the honest review standard
   workflow.md                 step-by-step per page type
   art-direction.md            how to choose a visual direction
-  react-bits.md               component catalog by effect
-  motion.md                   animation vocabulary and defaults
-  sources.md                  using design galleries responsibly
+  motion.md                   animation + motion graphics + cinematic bridge
+  aceternity.md               Aceternity UI catalog
+  react-bits.md               react-bits catalog (221 components)
+  sources.md                  gallery taxonomies, used responsibly
   stack.md                    single-file HTML vs React vs Astro
 ```
 
@@ -60,11 +63,17 @@ References load on demand, not upfront. That is the whole reason this is a route
 
 ## Design notes
 
-**Intake is mandatory.** A page built without positioning is a generic page, however good the execution. The router asks four questions and will not skip them.
+**No jargon required.** Say "hazme algo moderno" and the pipeline runs. `vocabulary.md` translates plain language into decisions — the user never has to know what CRO, AEO or a type scale is.
+
+**Honest by default.** `advisor.md` sets the standard: lead with the most serious problem, separate error from taste, never withhold a verdict, and say "do not build this" when that is the real answer. It applies while building, not only on request.
+
+**Intake is mandatory.** Four questions. A page built without positioning is a generic page, however good the execution.
 
 **Copy before layout.** Layout built around real words survives contact; layout built around lorem does not.
 
-**Galleries give principles, not pages.** `references/sources.md` covers how to use Awwwards, Cosmos and the rest without producing a copy of someone else's work.
+**Cinematic vocabulary, translated.** `motion.md` carries 130+ film technique names and a bridge table mapping each to its web equivalent — a dolly zoom becomes two layers scaling in opposition on scroll, a match cut becomes a FLIP shared-element transition.
+
+**Galleries give principles, not pages.** `sources.md` holds the real filter taxonomies read from Awwwards and the others, and the rule against reproducing their content.
 
 ## License
 

@@ -1,141 +1,155 @@
 ---
 name: webcraft
-description: "Build any kind of web page end to end — landing pages, marketing sites, product pages, portfolios, one-pagers, pricing pages, app screens. Routes the whole pipeline: intake, art direction, copy, build, conversion and SEO, delegating to the specialist skill at each step. Use whenever the user wants to create, design, build, rebuild, restyle, polish or review a web page or site, in any stack (single-file HTML, React, Next.js, Astro, Shopify). Also when they ask for a visual direction, a component for a specific effect, or say a page looks generic, templated or 'AI-made'."
+description: "Build any kind of web page end to end — landing pages, marketing sites, product pages, portfolios, pricing pages, app screens — and advise honestly on pages that already exist. Routes the whole pipeline: intake, art direction, copy, build, motion, conversion and SEO, delegating to the specialist skill at each step. Triggers on plain requests with no jargon: 'hazme una página', 'necesito una web', 'algo para vender esto', 'que se vea moderno', 'ponle animaciones', '¿cómo quedó?', 'se ve genérico'. Also for choosing a visual direction, picking a component or effect, reviewing or critiquing a page, or deciding how a site should be built."
 license: MIT
 metadata:
-  version: "1.0.0"
+  version: "2.0.0"
   author: Juan David Escobar
   category: web
 ---
 
 # webcraft
 
-Router for building web pages. You do not build the page from this file — you run the intake, pick the route, then hand each step to the skill that owns it.
+Router for building and reviewing web pages. You do not build from this file — you run intake, pick the route, and hand each step to the skill that owns it.
 
 ## Hard rules
 
-1. **Never skip intake.** A page built without positioning is a generic page. Run Step 0 even when the user sounds impatient.
-2. **Announce the skill you are invoking at each step.** The user should know what is driving each decision.
-3. **Show the result of a step before moving to the next.** No silent pipelines.
-4. **Never copy a design wholesale from a gallery.** Galleries are for extracting *principles* — composition, rhythm, type scale, motion logic. See `references/sources.md`.
+1. **Never make the user learn vocabulary.** They say "que se vea moderno" and you already know what that means. Translate silently, build, then name what you did in plain words. `references/vocabulary.md` is the translation layer — load it whenever a request is vague.
+2. **Never skip intake.** Four questions, maximum. A page built without positioning is a generic page however good the execution.
+3. **Announce each skill as you invoke it**, and show the result before moving on. No silent pipelines.
+4. **Be honest.** When something is bad, say it is bad, say why, say what to do instead. `references/advisor.md` is the standard. This applies while building, not just when asked to review.
+5. **Never copy a gallery page.** Extract principles, name what you took. See `references/sources.md`.
 
 ---
 
 ## Step 0 — Intake (always)
 
-Ask only what you cannot infer. Stop at four questions; more than that and the user disengages.
+Ask only what you cannot infer. Stop at four.
 
-- **What is it?** Product, service, or thing being presented.
-- **Who is it for?** The visitor, in one phrase.
-- **What should they do?** One action. If the user names three, make them pick the first.
-- **Brand?** Colors and tone if they exist; "propose one" if not.
+- **What is it?**
+- **Who is it for?**
+- **What should they do?** One action. If they name three, make them pick.
+- **Brand?** Colors and tone if they exist; "I'll propose one" if not.
 
-Then classify the job and state your read back in one line before proceeding:
+Then classify and state your read in one line:
 
 | Signal | Route |
 |---|---|
 | One page, one offer, one CTA | **Landing** |
 | Several pages, nav, content | **Marketing site** |
-| Feature/product detail, deep | **Product page** |
+| Feature or product detail | **Product page** |
 | Personal work, showcase | **Portfolio** |
 | Plans and tiers | **Pricing** |
-| Dashboard, settings, inbox, admin | **App screen** |
+| Dashboard, settings, admin | **App screen** |
+| A page that already exists | **Review** → go to Step 7 |
 
-Load `references/workflow.md` for the step-by-step of the route you picked.
+`references/workflow.md` has the step-by-step per route.
 
 ---
 
 ## Step 1 — Art direction
 
-Decide the look before writing markup. Never start with code.
+Decide the look before writing markup.
 
-- `ui-ux-pro-max` — palette, type pairing, layout patterns, product-type conventions
-- `design-taste-frontend` — the anti-slop house style and the look-and-fix loop on real screenshots. **Use this on every public-facing page.**
-- `brand-guidelines` — only when the user already has a brand to respect
-- `design` / `design-system` — when the job needs tokens, a logo, or a full identity
+- `ui-ux-pro-max` — palette, type pairing, layout patterns
+- `design-taste-frontend` — anti-slop house style and screenshot review loop. **Every public-facing page.**
+- `brand-guidelines` — only when a brand already exists
+- `design` / `design-system` — tokens, logo, full identity
 
-Read `references/art-direction.md` before proposing a direction. It holds the house rules and the defaults to avoid.
+Read `references/art-direction.md` first. It holds the house rules and the defaults to avoid.
 
 ---
 
 ## Step 2 — Copy
 
-Copy before layout. Layout built around real words survives contact; layout built around lorem does not.
+Copy before layout. Layout built around real words survives; layout built around lorem does not.
 
-- `copywriting` — headlines, section copy, CTAs
-- `content-humanizer` — run on everything `copywriting` produces
-- `copy-editing` — final pass
+`copywriting` → `content-humanizer` → `copy-editing`
 
 ---
 
 ## Step 3 — Build
 
-Pick the stack, then the builder.
-
 | Situation | Stack | Skill |
 |---|---|---|
 | One page, animated, self-contained | Single-file HTML + GSAP | `landing` |
 | Conversion-structured page | Structured HTML | `landing-page-generator` |
-| React / Next / Astro project | Components | `frontend-design` + `react-bits` catalog |
-| Interactive explorer or configurator | Single-file HTML | `playground` |
-| Shopify theme | Liquid | work in the theme directly |
+| React / Next / Astro | Components | `frontend-design` + the catalogs |
+| Interactive tool or configurator | Single-file HTML | `playground` |
+| Shopify | Liquid | work in the theme |
 
-For animation and component choices, load `references/react-bits.md` and `references/motion.md`.
-
----
-
-## Step 4 — Conversion
-
-Never hand over a page that has not been through this.
-
-- `page-cro` — every page, always
-- `form-cro` — if it has any form that is not signup
-- `signup-flow-cro` — if it has registration
-- `popup-cro` — only if the user asked for a popup
+`references/stack.md` to choose. `references/aceternity.md` and `references/react-bits.md` for components.
 
 ---
 
-## Step 5 — SEO
+## Step 4 — Motion
 
-- `seo-audit` — every public page
-- `schema-markup` — structured data
-- `site-architecture` — only for multi-page sites
-- `aeo` — when the user cares about being cited by AI assistants
-- `local-seo-manager` — physical business with a location
-- `programmatic-seo` — template-generated pages at scale
+Load `references/motion.md`. It carries the full animation taxonomy, the motion-graphics catalog, the cinematic technique vocabulary, and the bridge translating film techniques into web behavior.
+
+**One hero moment per page.** Motion must orient, sequence, confirm or characterize — decoration that does none is the clearest tell of generated design.
 
 ---
 
-## Step 6 — Video (optional)
+## Step 5 — Conversion
 
-Only when the page needs motion assets.
+`page-cro` always · `form-cro` if there is a form · `signup-flow-cro` if registration · `popup-cro` only if asked
 
-- `/hyperframes` — router; picks `product-launch-video`, `motion-graphics`, or another flow
-- `remotion-*` — when the project is already React and video belongs in the codebase
+---
+
+## Step 6 — SEO
+
+`seo-audit` always · `schema-markup` · `site-architecture` for multi-page · `aeo` for AI citation · `local-seo-manager` for physical businesses · `programmatic-seo` for templated pages at scale
+
+---
+
+## Step 7 — Review and advise
+
+This runs on request ("¿cómo quedó?", "se ve genérico", "revísala") **and** proactively while building.
+
+Load `references/advisor.md`. The order:
+
+1. **Does it communicate?** Five seconds: what, for whom, what next
+2. **Does it convert?** One action, friction removed, proof near the ask
+3. **Does it work?** Mobile, slow connection, keyboard, contrast
+4. **Is it designed or assembled?** Direction, or a pile of defaults
+5. **Is the craft there?** Spacing rhythm, type detail, motion restraint
+
+Lead with the most serious problem. Separate error from taste. Never withhold a verdict. Say "do not build this" when that is the honest answer.
+
+---
+
+## Step 8 — Video (optional)
+
+`/hyperframes` for motion assets · `remotion-*` when the project is already React
 
 ---
 
 ## Quick paths
 
-**"Just make me a landing"** → Step 0 (4 questions) → `ui-ux-pro-max` → `copywriting` → `landing` → `page-cro` → `seo-audit`. Announce each.
+**"Hazme una landing"** → intake → `ui-ux-pro-max` → `copywriting` → `landing` → `page-cro` → `seo-audit`
 
-**"This page looks generic"** → straight to `design-taste-frontend`. Skip intake; the page already exists.
+**"Se ve genérico"** → straight to `design-taste-frontend`. Skip intake; the page exists.
 
-**"I need a component that does X"** → `references/react-bits.md`, then `ui-ux-pro-max` if nothing fits.
+**"¿Cómo quedó?"** → `references/advisor.md`, full review, honest.
 
-**"Review my page"** → `design-taste-frontend` + `page-cro` + `seo-audit`, report only.
+**"Necesito un componente que haga X"** → `aceternity.md` and `react-bits.md`, then `ui-ux-pro-max` if nothing fits.
+
+**"Como [sitio famoso]"** → identify the mechanic, build that, name what you took. Never copy.
 
 ---
 
 ## References
 
-Load on demand, not upfront.
+Load on demand.
 
 | File | When |
 |---|---|
-| `references/workflow.md` | Step-by-step per page type |
-| `references/art-direction.md` | Before proposing any visual direction |
-| `references/react-bits.md` | Choosing a component or effect |
-| `references/motion.md` | Any animation decision |
-| `references/sources.md` | Looking for reference or inspiration |
-| `references/stack.md` | Deciding how to build it |
+| `vocabulary.md` | Request is vague or uses no technical terms |
+| `advisor.md` | Reviewing, critiquing, or flagging a problem |
+| `workflow.md` | Step-by-step per page type |
+| `art-direction.md` | Before proposing any visual direction |
+| `motion.md` | Any animation, motion graphic or cinematic reference |
+| `aceternity.md` | React section blocks and components |
+| `react-bits.md` | Standalone effects and backgrounds |
+| `sources.md` | Looking for reference or inspiration |
+| `stack.md` | Deciding how to build it |
